@@ -1,5 +1,11 @@
 @import "bootstrap";
 
+$darkGray: #222;
+$darkerGray: #555;
+$lightGray: #999;
+
+$linkColour: #08c;
+
 /* universal */
 
 html {
@@ -44,7 +50,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #999;
+  color: $lightGray;
 }
 
 p {
@@ -71,15 +77,15 @@ p {
 }
 
 .container a {
-  color: #08c;
+  color: $linkColour;
 }
 
 .container a:visited {
-  color: #08c;
+  color: $linkColour;
 }
 
 .container a:hover {
-  color: #08c;
+  color: $linkColour;
   background-color: transparent;
 }
 
@@ -93,11 +99,11 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #999;
+  color: $lightGray;
   a {
-    color: #555;
+    color: $darkerGray;
     &:hover {
-      color: #222;
+      color: $darkGray;
     } 
   }
   small {
