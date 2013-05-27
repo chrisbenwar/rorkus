@@ -1,0 +1,45 @@
+rake aborted!
+/home/chris/dev/ruby/rails/rorkus/db/migrate/20130527152754_create_users.rb:3: syntax error, unexpected ':', expecting keyword_end
+    create_table :users :force => true do |t|
+                         ^
+/home/chris/dev/ruby/rails/rorkus/db/migrate/20130527152754_create_users.rb:4: syntax error, unexpected tSYMBEG, expecting keyword_end
+      t.string :name
+                ^
+/home/chris/dev/ruby/rails/rorkus/db/migrate/20130527152754_create_users.rb:10: syntax error, unexpected keyword_end, expecting $end
+/var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:251:in `require'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:251:in `block in require'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:236:in `load_dependency'
+/var/lib/gems/1.9.1/gems/activesupport-3.2.13/lib/active_support/dependencies.rb:251:in `require'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/migration.rb:537:in `load_migration'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/migration.rb:533:in `migration'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/migration.rb:528:in `migrate'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/migration.rb:720:in `block (2 levels) in migrate'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/migration.rb:775:in `call'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/migration.rb:775:in `block in ddl_transaction'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/connection_adapters/abstract/database_statements.rb:192:in `transaction'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/transactions.rb:208:in `transaction'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/migration.rb:775:in `ddl_transaction'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/migration.rb:719:in `block in migrate'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/migration.rb:700:in `each'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/migration.rb:700:in `migrate'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/migration.rb:570:in `up'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/migration.rb:551:in `migrate'
+/var/lib/gems/1.9.1/gems/activerecord-3.2.13/lib/active_record/railties/databases.rake:193:in `block (2 levels) in <top (required)>'
+/var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/task.rb:246:in `call'
+/var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/task.rb:246:in `block in execute'
+/var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/task.rb:241:in `each'
+/var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/task.rb:241:in `execute'
+/var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/task.rb:184:in `block in invoke_with_call_chain'
+/var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/task.rb:177:in `invoke_with_call_chain'
+/var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/task.rb:170:in `invoke'
+/var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/application.rb:143:in `invoke_task'
+/var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/application.rb:101:in `block (2 levels) in top_level'
+/var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/application.rb:101:in `each'
+/var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/application.rb:101:in `block in top_level'
+/var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/application.rb:110:in `run_with_threads'
+/var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/application.rb:95:in `top_level'
+/var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/application.rb:73:in `block in run'
+/var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/application.rb:160:in `standard_exception_handling'
+/var/lib/gems/1.9.1/gems/rake-10.0.4/lib/rake/application.rb:70:in `run'
+Tasks: TOP => db:migrate
+(See full trace by running task with --trace)
