@@ -1,12 +1,20 @@
 require 'spec_helper'
 
 describe User do
-  before { @user = User.new(name: "Mr. Example", email: "a@example.com") }
+  before do @user = User.new(
+    name: "Mr. Example", 
+    email: "a@example.com",
+    password: "secret",
+    password_confirmation: "secret") 
+  end
 
   subject { @user }
 
   it { should respond_to(:name) }
   it { should respond_to(:email) }
+  it { should respond_to(:password_digest) }
+  it { should respond_to(:password_digest) }
+  it { should respond_to(:password_confirmation) }
 
   it { should be_valid }
 
@@ -52,5 +60,50 @@ describe User do
     end
 
     it { should_not be_valid }
+  end
+
+  describe "when password is not present" do
+    before do
+      @user = User.new(name: "Example User", email: "user@example.com", 
+                       password: " ", password_confirmation: " ")
+    end
+    it { should_not be_valid }
+  end
+
+  describe "when password doesn't match confirmation" do
+    before { @user.password_confirmation = "mismatch" }
+    it { should_not be_valid }
+  end  
+
+  describe "when password confirmation is nil" do
+    before do
+      @user = User.new(name: "Michael Hartl", email: "mhartl@example.com",
+                       password: "foobar", password_confirmation: nil)
+    end
+    it { should_not be_valid }
+  end
+
+  it { should respond_to(:authenticate) }
+
+  describe "with a password that's too short" do
+    before { @user.password = @user.password_confirmation = "a" * 5 }
+    it { should be_invalid }
+  end
+
+  describe "auth return" do
+    before { @user.save }
+    let(:found_user) { User.find_by_email(@user.email) }
+
+    describe "pw valid" do
+      it { should eq found_user.authenticate(@user.password) }
+    end
+
+    describe "pw invalid" do
+      let(:u_invalid) { found_user.authenticate("invalid") }
+
+      it { should_not eq u_invalid }
+      specify { expect(u_invalid).to be_false }  
+    end
+
   end
 end
