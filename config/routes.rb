@@ -8,7 +8,7 @@ Rorkus::Application.routes.draw do
 
   match '/signup', to: 'users#new'
 
-  resources :microposts
+  resources :microposts, only: [:create, :destroy]
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
